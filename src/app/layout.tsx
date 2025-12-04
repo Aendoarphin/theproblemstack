@@ -1,27 +1,33 @@
 import "./globals.css";
-import { ClerkProvider, SignInButton, SignUpButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+import { Fira_Code } from "next/font/google";
+import { ClerkProvider } from "@clerk/nextjs";
+import { ScrollProvider } from "@/app/scroll-provider";
+import Header from "@/components/Header";
 
-export default function RootLayout({
-  children,
-}: Readonly<{
+export const firaCode = Fira_Code({
+  weight: ["400", "500", "700"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-fira",
+});
+
+export default function RootLayout({ children }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
     <ClerkProvider>
-      <html lang="en">
-        <body className={`antialiased`}>
-          <header className="flex justify-end items-center p-4 gap-4 h-16 border-b">
-            <SignedOut>
-              <SignInButton />
-              <SignUpButton>
-                <button className="bg-[#125543] text-ceramic-white rounded-full font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 cursor-pointer">Sign Up</button>
-              </SignUpButton>
-            </SignedOut>
-            <SignedIn>
-              <UserButton />
-            </SignedIn>
-          </header>
-          {children}
+      <html lang="en" className={firaCode.className}>
+        <body className="container mx-auto antialiased px-4">
+          <ScrollProvider>
+            <Header />
+            {children}
+            <footer className="text-center text-foreground text-xs p-4">
+              <p>
+                &copy; {new Date().getFullYear()}{" "}
+                {process.env.NEXT_PUBLIC_BRAND_NAME}. All rights reserved.
+              </p>
+            </footer>
+          </ScrollProvider>
         </body>
       </html>
     </ClerkProvider>
