@@ -1,16 +1,13 @@
 import { IconQuoteFilled } from "@tabler/icons-react";
-import Image from "next/image";
-import heroBg from "../../public/images/hero-bg.svg"
 
 export default function Home() {
   return (
     <div>
       <main className="*:container *:px-2">
-        <section className="content-center text-center mt-60">
-          <Image fill alt="background" src={heroBg} objectFit="cover" style={{zIndex: -50, opacity: .25}}/>
+        <section className="content-center text-center mt-40">
           {/* Hero section */}
           <div className="w-full mx-auto px-4">
-            <h1 className="uppercase">The Problem Stack</h1>
+            <h1 className="uppercase drop-shadow-2xl dark:drop-shadow-sm dark:drop-shadow-white">The Problem Stack</h1>
             <h5 className="text-xl md:text-2xl text-foreground">
               <span className="dark:text-red-400 text-red-600 font-mono font-bold">Stop</span> building To-Do lists. <span className="dark:text-green-400 text-green-600 font-mono font-bold">Start</span> solving code-worthy chaos.
             </h5>
