@@ -17,7 +17,7 @@ export default function RootLayout({ children }: Readonly<{
   return (
     <ClerkProvider>
       <html lang="en" className={firaCode.className}>
-        <body className="container mx-auto antialiased px-4">
+        <body className={`mx-auto antialiased`}>
           <ScrollProvider>
             <Header />
             {children}

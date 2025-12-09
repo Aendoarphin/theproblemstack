@@ -16,7 +16,7 @@ export default function Header() {
 
   return (
     <header
-      className={`flex justify-between items-center py-4 top-0 sticky transition-transform ${
+      className={`container mx-auto flex justify-between items-center py-4 top-0 sticky transition-transform ${
         hidden ? "-translate-y-20" : "translate-y-0"
       }`}
     >
@@ -31,14 +31,17 @@ export default function Header() {
 
       <div className="gap-4 flex *:cursor-pointer">
         <SignedOut>
-          <SignInButton />
+          <SignInButton>
+            <button className="border p-2 rounded-sm text-foreground dark:text-foreground">
+              Sign In
+            </button>
+          </SignInButton>
           <SignUpButton>
             <button className="bg-primary p-2 rounded-sm text-white">
               Sign Up
             </button>
           </SignUpButton>
         </SignedOut>
-
         <SignedIn>
           <UserButton />
         </SignedIn>

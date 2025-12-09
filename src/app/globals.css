@@ -1,9 +1,10 @@
 @import "tailwindcss";
+@import "animate.css";
 
 :root {
   --primary: #9a763b;
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #e3e3e3;
+  --foreground: #101010;
 }
 
 @theme inline {
@@ -14,8 +15,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #101010;
+    --foreground: #e3e3e3;
   }
 }
 
@@ -27,7 +28,7 @@ body {
 /********************* Custom Styles *********************/
 /*********************************************************/
 .brand {
-  line-height: .8;
+  line-height: 0.8;
 }
 
 .gradient-text {
@@ -37,9 +38,33 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
-button, input[type=button] {
+button,
+input[type="button"] {
   cursor: pointer;
 }
+
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background-color: var(--foreground);
+  transform-origin: left;
+  animation: scaleProgress linear forwards;
+  animation-timeline: scroll();
+}
+
+@keyframes scaleProgress {
+  from {
+    transform: scaleX(0); /* Start with 0 width */
+  }
+  to {
+    transform: scaleX(1); /* End with 100% width */
+  }
+}
+
+
 /*********************************************************/
 /*********************************************************/
 
