@@ -7,6 +7,8 @@ import {
   IconUsersGroup,
 } from "@tabler/icons-react";
 import { useEffect, useRef, useState } from "react";
+import meteors from "@/assets/meteors.svg";
+import Image from "next/image";
 
 export default function Landing() {
   const [isHeroVisible, setIsHeroVisible] = useState(false);
@@ -65,10 +67,11 @@ export default function Landing() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [isHeroVisible, isFeaturesVisible, isMissionVisible, isCtaVisible]);
-
+// continue here with parallax
   return (
-    <div className="bg-linear-60 from-primary to-transparent transition-opacity">
-      <span className="scroll-progress"></span>
+    <div className="bg-linear-60 from-transparent via-primary to-transparent transition-opacity">
+      <Image src={meteors} alt="meteors" className="bg-scroll-parallax -z-1" />
+      <span className="scroll-progress z-2"></span>
       <main className="*:px-2">
         {/* Hero section */}
         <section

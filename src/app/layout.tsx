@@ -21,7 +21,7 @@ export default function RootLayout({ children }: Readonly<{
           <ScrollProvider>
             <Header />
             {children}
-            <footer className="text-center text-foreground text-xs p-4">
+            <footer className="z-1 bg-background text-center text-foreground text-xs p-4">
               <p>
                 &copy; {new Date().getFullYear()}{" "}
                 {process.env.NEXT_PUBLIC_BRAND_NAME}. All rights reserved.

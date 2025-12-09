@@ -16,11 +16,12 @@ export default function Header() {
 
   return (
     <header
-      className={`container mx-auto flex justify-between items-center py-4 top-0 sticky transition-transform ${
+      className={`z-1 bg-background py-4 top-0 sticky transition-transform ${
         hidden ? "-translate-y-20" : "translate-y-0"
       }`}
     >
-      <div className="text-foreground text-7xl brand">
+      <div className="container flex mx-auto justify-between items-center">
+        <div className="text-foreground text-7xl brand">
         <Image
           alt="brand logo"
           className="drop-shadow-sm drop-shadow-foreground"
@@ -45,6 +46,7 @@ export default function Header() {
         <SignedIn>
           <UserButton />
         </SignedIn>
+      </div>
       </div>
     </header>
   );

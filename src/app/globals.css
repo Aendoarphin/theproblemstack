@@ -55,6 +55,22 @@ input[type="button"] {
   animation-timeline: scroll();
 }
 
+.bg-scroll-parallax {
+  position: fixed;
+  transform-origin: top;
+  animation-timeline: scroll();
+  animation-name: translationProgress linear forwards;
+}
+
+@keyframes translationProgress {
+  from {
+    transform: scaleY(0); /* Start at original position */
+  }
+  to {
+    transform: scaleY(-0.05); /* Move up by 5% of its height */
+  }
+}
+
 @keyframes scaleProgress {
   from {
     transform: scaleX(0); /* Start with 0 width */
