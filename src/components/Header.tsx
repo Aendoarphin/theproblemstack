@@ -16,7 +16,7 @@ export default function Header() {
 
   return (
     <header
-      className={`z-1 bg-background py-4 top-0 sticky transition-transform ${
+      className={`z-1 py-4 top-0 sticky transition-transform ${
         hidden ? "-translate-y-20" : "translate-y-0"
       }`}
     >

@@ -3,6 +3,7 @@ import { Fira_Code } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
 import { ScrollProvider } from "@/app/scroll-provider";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export const firaCode = Fira_Code({
   weight: ["400", "500", "700"],
@@ -21,12 +22,7 @@ export default function RootLayout({ children }: Readonly<{
           <ScrollProvider>
             <Header />
             {children}
-            <footer className="z-1 bg-background text-center text-foreground text-xs p-4">
-              <p>
-                &copy; {new Date().getFullYear()}{" "}
-                {process.env.NEXT_PUBLIC_BRAND_NAME}. All rights reserved.
-              </p>
-            </footer>
+            <Footer />
           </ScrollProvider>
         </body>
       </html>
