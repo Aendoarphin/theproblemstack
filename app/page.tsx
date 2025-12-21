@@ -13,7 +13,7 @@ export default function Home() {
       <Header />
       <main>
         {/* hero */}
-        <section className="mt-20 h-1/2 px-6 max-w-5xl mx-auto flex flex-col">
+        <section className="mt-20 h-1/2 px-6 max-w-2xl md:w-3xl lg:max-w-6xl mx-auto flex flex-col">
           <h1 className="leading-tight mb-2 text-balance">
             This Is The Problem Stack
           </h1>
@@ -23,9 +23,6 @@ export default function Home() {
             grow together.
           </p>
           <br />
-          {/* mechanics */}
-          <ProcessFlow />
-          <Divider />
           <h2>Build With Purpose</h2>
           <div className="sm:inline-flex gap-4 items-center">
             <p>
@@ -40,6 +37,8 @@ export default function Home() {
             </button>
           </div>
         </section>
+        <Divider />
+        <ProcessFlow />
         {/* testimonials */}
         <section></section>
         {/* call to action */}
@@ -87,7 +86,7 @@ const ProcessFlow = () => {
   ];
 
   return (
-    <section className=" max-w-5xl mx-auto">
+    <section className="max-w-2xl md:w-3xl lg:max-w-6xl px-6 mx-auto">
       <h2>How It Works</h2>
       <br />
       <div className="max-w-6xl mx-auto">
@@ -131,6 +130,6 @@ const ProcessFlow = () => {
 
 function Divider() {
   return (
-    <hr className="my-5 text-muted mx-6 sm:mx-40 opacity-0" />
+    <hr className="my-10 text-muted max-w-sm mx-6 sm:max-w-2xl md:w-3xl lg:max-w-6xl sm:mx-auto" />
   );
 }

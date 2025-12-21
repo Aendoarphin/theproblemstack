@@ -27,7 +27,6 @@ function Header() {
             />
             <Link href="/">Home</Link>
             <Link href="/about">About</Link>
-            <Link href="/contact">Contact</Link>
             {isSignedIn ? (
               <Link href="/signin">Sign Out</Link>
             ) : (
