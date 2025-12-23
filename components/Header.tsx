@@ -3,15 +3,15 @@
 import { IconMenu, IconX } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import { useState } from "react";
 
 function Header() {
   const [visible, setVisible] = useState(false);
-  const isSignedIn = false;
   return (
     <header className="w-full p-4 inline-flex items-center fixed top-0 z-2">
       <div id="brand-container">
-        <Image src="/brand-logo-black.svg" className="dark:invert" alt="Logo" width={120} height={40} />
+        <Image src="/brand-logo-black.svg" className="dark:invert" alt="Logo" width={120} height={40} onClick={() => redirect("/")} />
       </div>
       <div
         className="inline-flex sm:hidden ml-auto items-center gap-2 font-semibold"
@@ -25,13 +25,10 @@ function Header() {
               onClick={() => setVisible(!visible)}
               className="mr-auto"
             />
-            <Link href="/">Home</Link>
+            <Link href="/home">Home</Link>
             <Link href="/about">About</Link>
-            {isSignedIn ? (
-              <Link href="/signin">Sign Out</Link>
-            ) : (
-              <Link href="/signup">Sign In</Link>
-            )}
+            <Link href="/contact">Contact</Link>
+            <Link href="/signin">Sign In</Link>
           </div>
         </aside>
       </div>
@@ -39,14 +36,10 @@ function Header() {
         id="link-container"
         className="ml-auto items-center gap-4 font-semibold sm:inline-flex hidden"
       >
-        <Link href="/">Home</Link>
+        <Link href="/home">Home</Link>
         <Link href="/about">About</Link>
         <Link href="/contact">Contact</Link>
-        {isSignedIn ? (
-          <button type="button">Sign Out</button>
-        ) : (
-          <button type="button">Sign In</button>
-        )}
+        <Link href="/signin"></Link>
       </div>
     </header>
   );

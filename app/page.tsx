@@ -1,5 +1,3 @@
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
 import {
   IconPencilPlus,
   IconShieldCheck,
@@ -7,10 +5,9 @@ import {
   IconCheck,
 } from "@tabler/icons-react";
 
-export default function Home() {
+export default function RootPage() {
   return (
     <div className="flex flex-col min-h-screen">
-      <Header />
       <main>
         {/* hero */}
         <section className="mt-20 h-1/2 px-6 max-w-2xl md:w-3xl lg:max-w-6xl mx-auto flex flex-col">
@@ -44,7 +41,6 @@ export default function Home() {
         {/* call to action */}
         <section></section>
       </main>
-      <Footer />
     </div>
   );
 }
