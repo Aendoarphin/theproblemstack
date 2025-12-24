@@ -4,10 +4,20 @@ import {
   IconBracketsContain,
   IconCheck,
 } from "@tabler/icons-react";
+import Image from "next/image";
 
 export default function RootPage() {
   return (
     <div className="flex flex-col min-h-screen">
+      <div className="fixed top-0 opacity-50 bottom-0 w-full -z-1 bg-linear-30 from-transparent to-primary">
+        <Image
+          src="/modern-bg.jpg"
+          alt="hero"
+          width={1920}
+          height={1080}
+          className="object-cover grayscale-100 mix-blend-multiply dark:brightness-40"
+        />
+      </div>
       <main>
         {/* hero */}
         <section className="mt-20 h-1/2 px-6 max-w-2xl md:w-3xl lg:max-w-6xl mx-auto flex flex-col">

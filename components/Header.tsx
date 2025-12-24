@@ -10,8 +10,8 @@ function Header() {
   const [visible, setVisible] = useState(false);
   return (
     <header className="w-full p-4 inline-flex items-center fixed top-0 z-2">
-      <div id="brand-container">
-        <Image src="/brand-logo-black.svg" className="dark:invert" alt="Logo" width={120} height={40} onClick={() => redirect("/")} />
+      <div id="brand-container" className="cursor-pointer" onClick={() => redirect("/")}>
+        <Image src="/brand-logo-black.svg" className="dark:invert" alt="Logo" width={120} height={40} />
       </div>
       <div
         className="inline-flex sm:hidden ml-auto items-center gap-2 font-semibold"
